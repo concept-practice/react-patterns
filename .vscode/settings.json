@@ -1,0 +1,10 @@
+{
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "files.eol": "\n",
+  "files.autoSaveDelay": 5000,
+  "html.autoClosingTags": true
+}

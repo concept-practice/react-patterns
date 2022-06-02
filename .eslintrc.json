@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "eslint:all",
+    "plugin:@typescript-eslint/all",
+    "react-app",
+    "plugin:react/all",
+    "plugin:react/jsx-runtime",
+    "plugin:jsx-a11y/strict",
+    "plugin:compat/recommended",
+    "react-app/jest",
+    "plugin:jest/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "one-var": [0],
+    "no-void": [2, { "allowAsStatement": true }],
+    "@typescript-eslint/array-type": [2, { "default": "generic" }],
+    "@typescript-eslint/naming-convention": [
+      2,
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": [2],
+    "@typescript-eslint/prefer-readonly-parameter-types": [0],
+    "@typescript-eslint/no-inferrable-types": [0],
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    "react/jsx-no-bind": [2, { "ignoreDOMComponents": true }],
+    "react/jsx-no-literals": [0],
+    "react/jsx-max-depth": [2, { "max": 5 }],
+    "react/prop-types": [0]
+  },
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  }
+}
