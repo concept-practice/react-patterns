@@ -1,5 +1,6 @@
 import "./common/styles/index.scss";
 import App from "./app/App";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
@@ -9,7 +10,9 @@ if (rootDoc) {
   const root = ReactDOM.createRoot(rootDoc);
   root.render(
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </React.StrictMode>
   );
 }
