@@ -14,7 +14,13 @@ const BaseTextInput: React.FC<BaseTextInputProps> = ({ children, useInput, label
     <InputField>
       <Label htmlFor={inputId} text={labelText} />
       <InputControl options="has-icons-left has-icons-right">
-        <input className="input" id={inputId} onChange={useInput.handleOnChange} type={inputType} />
+        <input
+          className="input"
+          id={inputId}
+          onChange={useInput.handleOnChange}
+          type={inputType}
+          value={useInput.value}
+        />
         {children}
         <Icon iconType="fas fa-check" options="is-small is-right" />
       </InputControl>

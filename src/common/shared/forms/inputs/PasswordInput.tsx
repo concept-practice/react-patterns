@@ -1,21 +1,19 @@
 import BaseTextInput from "../base/BaseTextInput";
-import EyeIcon from "../../elements/icons/EyeIcon";
+import ClickableIcon from "../../elements/icons/ClickableIcon";
 import type IUseInput from "../hooks/IUseInput";
-import ValueDefaults from "../../../../utilities/defaults/ValueDefaults";
 import useToggle from "../../../hooks/use-toggle/UseToggle";
 
 const PasswordInput: React.FC<PasswordInputProps> = ({ labelText = "Password", useInput }) => {
-  const [value, toggle] = useToggle<string>("password", "text");
-
-  const onClickHandler = (): void => {};
-
-  const onKeyDownHandler = (): void => {};
+  const [inputType, toggle] = useToggle<string>("password", "text");
 
   return (
-    <BaseTextInput inputType={value} labelText={labelText} useInput={useInput}>
-      <div onClick={onClickHandler} onKeyDown={onKeyDownHandler} role="button" tabIndex={ValueDefaults.CanTabTo}>
-        <EyeIcon />
-      </div>
+    <BaseTextInput inputType={inputType} labelText={labelText} useInput={useInput}>
+      <ClickableIcon
+        iconType="fas fa-eye"
+        onClickHandler={toggle}
+        onKeyDownHandler={toggle}
+        options="is-small is-left"
+      />
     </BaseTextInput>
   );
 };
