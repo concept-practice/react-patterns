@@ -1,5 +1,5 @@
 import BaseTextInput from "../base/BaseTextInput";
-import useInput from "../../common/hooks/UseInput";
+import useInput from "../hooks/UseInput";
 
 const BaseTextInputWrapper: React.FC = () => {
   const input = useInput();

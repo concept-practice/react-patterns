@@ -1,11 +1,12 @@
 import BaseTextInput from "../base/BaseTextInput";
-import type IUseInput from "../../common/hooks/IUseInput";
+import type IUseInput from "../hooks/IUseInput";
 
-const TextInput: React.FC<TextInputProps> = ({ useInput }) => {
-  return <BaseTextInput labelText="Model:" useInput={useInput} />;
+const TextInput: React.FC<TextInputProps> = ({ labelText, useInput }) => {
+  return <BaseTextInput labelText={labelText} useInput={useInput} />;
 };
 
 interface TextInputProps {
+  labelText: string;
   useInput: IUseInput;
 }
 
