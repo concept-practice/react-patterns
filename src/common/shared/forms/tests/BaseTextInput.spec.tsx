@@ -1,10 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import BaseTextInputWrapper from "./BaseTextInputWrapper";
+import BaseTextInput from "../base/BaseTextInput";
+import useInput from "../hooks/UseInput";
 import userEvent from "@testing-library/user-event";
 
 describe("BaseTextInput", () => {
+  const Component: React.FC = () => {
+    return <BaseTextInput labelText="text" useInput={useInput()} />;
+  };
+
   it("Handles Change Events", async () => {
-    render(<BaseTextInputWrapper />);
+    render(<Component />);
 
     const user = userEvent.setup();
 
@@ -12,6 +17,6 @@ describe("BaseTextInput", () => {
 
     await user.keyboard("Hello");
 
-    expect(await screen.findByText(/Hello/iu)).toBeInTheDocument();
+    expect(screen.getByLabelText("text")).toHaveValue("Hello");
   });
 });
