@@ -1,19 +1,10 @@
+import useBooleanToggle from "../../../hooks/use-boolean-toggle/UseBooleanToggle";
+
 const ValidationMessage: React.FC<ValidationMessageProps> = ({ validInput, validationMessage }) => {
-  const showValidationMessage = (): string => {
-    if (validInput) {
-      return "valid";
-    }
-    return validationMessage;
-  };
+  const showValidationMessage = useBooleanToggle("valid", validationMessage, validInput);
+  const isDangerOrValid = useBooleanToggle("is-invisible", "is-danger", validInput);
 
-  const isDangerOrValid = (): string => {
-    if (validInput) {
-      return "is-invisible";
-    }
-    return "is-danger";
-  };
-
-  return <p className={`help ${isDangerOrValid()}`}>{showValidationMessage()}</p>;
+  return <p className={`help ${isDangerOrValid}`}>{showValidationMessage}</p>;
 };
 
 interface ValidationMessageProps {

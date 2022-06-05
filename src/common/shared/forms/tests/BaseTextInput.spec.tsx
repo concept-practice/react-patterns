@@ -1,16 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import BaseTextInput from "../base/BaseTextInput";
 import BaseTextInputWrapper from "./BaseTextInputWrapper";
-import useInput from "../hooks/UseInput";
 import userEvent from "@testing-library/user-event";
 
 describe("BaseTextInput", () => {
-  const Component: React.FC = () => {
-    return <BaseTextInput labelText="text" useInput={useInput()} />;
-  };
-
   it("Handles Change Events", async () => {
-    render(<Component />);
+    render(<BaseTextInputWrapper labelText="text" required />);
 
     const user = userEvent.setup();
 
