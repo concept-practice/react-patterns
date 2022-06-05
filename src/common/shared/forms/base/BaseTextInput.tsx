@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import ValidationMessage from "./ValidationMessage";
 import ValueDefaults from "../../../../utilities/defaults/ValueDefaults";
 import useBooleanToggle from "../../../hooks/use-boolean-toggle/UseBooleanToggle";
+import useDirtyValidation from "../hooks/UseDirtyValidation";
 import { useId } from "react";
 
 const BaseTextInput: React.FC<BaseTextInputProps> = ({
@@ -16,7 +17,12 @@ const BaseTextInput: React.FC<BaseTextInputProps> = ({
   inputType = "text",
 }) => {
   const inputId = useId();
-  const isDangerOrSuccess = useBooleanToggle("is-success", "is-danger", useInput.valid);
+  const [dirty, isDirtyValid, onFocusHandler] = useDirtyValidation(useInput);
+  const isDangerOrSuccess = useBooleanToggle(
+    useBooleanToggle("is-success", "is-danger", isDirtyValid),
+    ValueDefaults.String,
+    dirty
+  );
 
   return (
     <InputField>
@@ -26,18 +32,22 @@ const BaseTextInput: React.FC<BaseTextInputProps> = ({
           className={`input ${isDangerOrSuccess}`}
           id={inputId}
           onChange={useInput.handleOnChange}
+          onFocus={(event): void => {
+            useInput.handleOnChange(event);
+            onFocusHandler();
+          }}
           required={required}
           type={inputType}
           value={useInput.value}
         />
         {children}
         <ComponentBooleanToggle
-          boolValue={useInput.valid}
+          boolValue={isDirtyValid}
           falseValue={<ExclamationTriangleIcon options="is-small is-right" />}
           trueValue={<CheckIcon options="is-small is-right" />}
         />
       </InputControl>
-      <ValidationMessage validInput={useInput.valid} validationMessage={useInput.validationMessage} />
+      <ValidationMessage validInput={isDirtyValid} validationMessage={useInput.validationMessage} />
     </InputField>
   );
 };

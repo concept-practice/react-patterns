@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function useInput(): IUseInput {
   const [value, setValue] = useState<string>(ValueDefaults.String);
-  const [valid, setValid] = useState<boolean>(true);
+  const [valid, setValid] = useState<boolean>(false);
   const [validationMessage, setValidationMessage] = useState<string>(ValueDefaults.String);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
