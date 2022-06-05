@@ -7,7 +7,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ labelText = "Password", u
   const [inputType, toggle] = useToggle<string>("password", "text");
 
   return (
-    <BaseTextInput inputType={inputType} labelText={labelText} useInput={useInput}>
+    <BaseTextInput inputType={inputType} labelText={labelText} required useInput={useInput}>
       <ClickableIcon
         iconType="fas fa-eye"
         onClickHandler={toggle}

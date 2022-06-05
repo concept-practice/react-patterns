@@ -16,6 +16,8 @@ export default function useInput(): IUseInput {
 
   return {
     handleOnChange,
+    valid,
+    validationMessage,
     value,
   };
 }

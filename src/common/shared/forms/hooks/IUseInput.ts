@@ -1,4 +1,6 @@
 export default interface IUseInput {
-  value: string;
   handleOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  valid: boolean;
+  value: string;
+  validationMessage: string;
 }
