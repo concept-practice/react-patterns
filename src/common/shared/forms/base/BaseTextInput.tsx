@@ -1,4 +1,5 @@
-import { Icon, InputControl, InputField, Label } from "../..";
+import { CheckIcon, ExclamationTriangleIcon, InputControl, InputField, Label } from "../..";
+import ComponentBooleanToggle from "../../../hocs/ComponentBooleanToggle";
 import type IUseInput from "../hooks/IUseInput";
 import type ProjectionProps from "../../common/ProjectionProps";
 import type { ReactNode } from "react";
@@ -30,7 +31,11 @@ const BaseTextInput: React.FC<BaseTextInputProps> = ({
           value={useInput.value}
         />
         {children}
-        <Icon iconType="fas fa-check" options="is-small is-right" />
+        <ComponentBooleanToggle
+          boolValue={useInput.valid}
+          falseValue={<ExclamationTriangleIcon options="is-small is-right" />}
+          trueValue={<CheckIcon options="is-small is-right" />}
+        />
       </InputControl>
       <ValidationMessage validInput={useInput.valid} validationMessage={useInput.validationMessage} />
     </InputField>
