@@ -5,7 +5,6 @@ import type ProjectionProps from "../../common/ProjectionProps";
 import type { ReactNode } from "react";
 import ValidationMessage from "./ValidationMessage";
 import ValueDefaults from "../../../../utilities/defaults/ValueDefaults";
-import useBooleanToggle from "../../../hooks/use-boolean-toggle/UseBooleanToggle";
 import useDirtyValidation from "../hooks/UseDirtyValidation";
 import { useId } from "react";
 
@@ -18,18 +17,24 @@ const BaseTextInput: React.FC<BaseTextInputProps> = ({
 }) => {
   const inputId = useId();
   const [dirty, isDirtyValid, onFocusHandler] = useDirtyValidation(useInput);
-  const isDangerOrSuccess = useBooleanToggle(
-    useBooleanToggle("is-success", "is-danger", isDirtyValid),
-    ValueDefaults.String,
-    dirty
-  );
+
+  const isDangerOrSuccess = (): string => {
+    if (dirty) {
+      if (isDirtyValid) {
+        return "is-success";
+      }
+      return "is-danger";
+    }
+    return "";
+  };
 
   return (
     <InputField>
       <Label htmlFor={inputId} text={labelText} />
       <InputControl options="has-icons-left has-icons-right">
         <input
-          className={`input ${isDangerOrSuccess}`}
+          aria-label={`${inputType} input`}
+          className={`input ${isDangerOrSuccess()}`}
           id={inputId}
           onChange={useInput.handleOnChange}
           onFocus={(event): void => {

@@ -29,8 +29,20 @@ describe("BaseTextInput", () => {
     expect(screen.getByLabelText("text")).toHaveClass("is-danger");
   });
 
-  it("Valid input has success class", () => {
+  it("Valid input has no class", () => {
     render(<BaseTextInputWrapper labelText="text" required />);
+
+    expect(screen.getByLabelText("text")).not.toHaveClass("is-success");
+  });
+
+  it("Valid in on focus has success", async () => {
+    render(<BaseTextInputWrapper labelText="text" required />);
+
+    const user = userEvent.setup();
+
+    await user.click(screen.getByLabelText("text"));
+
+    await user.keyboard("123");
 
     expect(screen.getByLabelText("text")).toHaveClass("is-success");
   });
