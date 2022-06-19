@@ -5,9 +5,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 
-const rootDoc = document.getElementById("root");
-if (rootDoc) {
-  const root = ReactDOM.createRoot(rootDoc);
+const rootDocument = document.querySelector("#root");
+if (rootDocument) {
+  const root = ReactDOM.createRoot(rootDocument);
   root.render(
     <React.StrictMode>
       <BrowserRouter>

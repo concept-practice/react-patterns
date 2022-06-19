@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-export default function useDataFetch<T>(emptyFunc: () => T, fetchFunc: () => Promise<T>): T {
-  const [data, setData] = useState<T>(emptyFunc());
+export default function useDataFetch<T>(emptyFunction: () => T, fetchFunction: () => Promise<T>): T {
+  const [data, setData] = useState<T>(emptyFunction());
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
-        const result = await fetchFunc();
+        const result = await fetchFunction();
         setData(result);
       } catch (error) {
         // eslint-disable-next-line no-console
@@ -15,7 +15,7 @@ export default function useDataFetch<T>(emptyFunc: () => T, fetchFunc: () => Pro
     };
 
     void fetchData();
-  }, [fetchFunc]);
+  }, [fetchFunction]);
 
   return data;
 }

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
 
-export default interface ProjectionProps {
+export default interface ProjectionProperties {
   children?: ReactNode;
 }

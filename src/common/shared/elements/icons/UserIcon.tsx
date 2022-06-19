@@ -1,7 +1,7 @@
 import Icon from "./Icon";
-import type OptionsProps from "../../common/OptionsProps";
+import type OptionsProperties from "../../common/OptionsProperties";
 
-const UserIcon: React.FC<OptionsProps> = ({ options }) => {
+const UserIcon: React.FC<OptionsProperties> = ({ options }) => {
   return <Icon iconType="fas fa-user" options={options} />;
 };
 

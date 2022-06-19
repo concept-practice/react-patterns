@@ -3,7 +3,7 @@ import ClickableIcon from "../../elements/icons/ClickableIcon";
 import type IUseInput from "../hooks/IUseInput";
 import useToggle from "../../../hooks/use-toggle/UseToggle";
 
-const PasswordInput: React.FC<PasswordInputProps> = ({ labelText = "Password", useInput }) => {
+const PasswordInput: React.FC<PasswordInputProperties> = ({ labelText = "Password", useInput }) => {
   const [inputType, toggle] = useToggle<string>("password", "text");
 
   return (
@@ -18,7 +18,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ labelText = "Password", u
   );
 };
 
-interface PasswordInputProps {
+interface PasswordInputProperties {
   labelText?: string;
   useInput: IUseInput;
 }

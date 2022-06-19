@@ -2,6 +2,8 @@
   "extends": [
     "eslint:all",
     "plugin:@typescript-eslint/all",
+    "plugin:unicorn/recommended",
+    "plugin:promise/recommended",
     "react-app",
     "plugin:react/all",
     "plugin:react/jsx-runtime",
@@ -28,6 +30,13 @@
     "@typescript-eslint/explicit-function-return-type": [2],
     "@typescript-eslint/prefer-readonly-parameter-types": [0],
     "@typescript-eslint/no-inferrable-types": [0],
+    "unicorn/filename-case": [
+      2,
+      {
+        "case": "pascalCase"
+      }
+    ],
+    "promise/prefer-await-to-then": [2],
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
     "react/jsx-no-bind": [0],

@@ -1,4 +1,4 @@
-const Label: React.FC<LabelProps> = ({ htmlFor, text }) => {
+const Label: React.FC<LabelProperties> = ({ htmlFor, text }) => {
   return (
     <label className="label" htmlFor={htmlFor}>
       {text}
@@ -6,7 +6,7 @@ const Label: React.FC<LabelProps> = ({ htmlFor, text }) => {
   );
 };
 
-interface LabelProps {
+interface LabelProperties {
   htmlFor: string;
   text: string;
 }

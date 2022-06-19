@@ -1,6 +1,6 @@
-import type ProjectionProps from "../../common/ProjectionProps";
+import type ProjectionProperties from "../../common/ProjectionProperties";
 
-const InputField: React.FC<ProjectionProps> = ({ children }) => {
+const InputField: React.FC<ProjectionProperties> = ({ children }) => {
   return <div className="field">{children}</div>;
 };
 

@@ -2,7 +2,7 @@ import BaseTextInput from "../base/BaseTextInput";
 import type IUseInput from "../hooks/IUseInput";
 import UserIcon from "../../elements/icons/UserIcon";
 
-const TextInput: React.FC<TextInputProps> = ({ labelText, useInput }) => {
+const TextInput: React.FC<TextInputProperties> = ({ labelText, useInput }) => {
   return (
     <BaseTextInput labelText={labelText} useInput={useInput}>
       <UserIcon options="is-small is-left" />
@@ -10,7 +10,7 @@ const TextInput: React.FC<TextInputProps> = ({ labelText, useInput }) => {
   );
 };
 
-interface TextInputProps {
+interface TextInputProperties {
   labelText: string;
   useInput: IUseInput;
 }

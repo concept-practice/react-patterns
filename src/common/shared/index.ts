@@ -1,21 +1,9 @@
-import CheckIcon from "./elements/icons/CheckIcon";
-import ExclamationTriangleIcon from "./elements/icons/ExclamationTriangleIcon";
-import Icon from "./elements/icons/Icon";
-import InputControl from "./forms/common/InputControl";
-import InputField from "./forms/common/InputField";
-import Label from "./elements/Label";
-import PasswordInput from "./forms/inputs/PasswordInput";
-import TextInput from "./forms/inputs/TextInput";
-import UserIcon from "./elements/icons/UserIcon";
-
-export {
-  InputField,
-  InputControl,
-  TextInput,
-  PasswordInput,
-  UserIcon,
-  Icon,
-  Label,
-  CheckIcon,
-  ExclamationTriangleIcon,
-};
+export { default as CheckIcon } from "./elements/icons/CheckIcon";
+export { default as Icon } from "./elements/icons/Icon";
+export { default as ExclamationTriangleIcon } from "./elements/icons/ExclamationTriangleIcon";
+export { default as InputField } from "./forms/common/InputField";
+export { default as InputControl } from "./forms/common/InputControl";
+export { default as PasswordInput } from "./forms/inputs/PasswordInput";
+export { default as Label } from "./elements/Label";
+export { default as UserIcon } from "./elements/icons/UserIcon";
+export { default as TextInput } from "./forms/inputs/TextInput";

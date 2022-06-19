@@ -1,7 +1,7 @@
 import Icon from "./Icon";
-import type OptionsProps from "../../common/OptionsProps";
+import type OptionsProperties from "../../common/OptionsProperties";
 
-const ExclamationTriangleIcon: React.FC<OptionsProps> = ({ options }) => {
+const ExclamationTriangleIcon: React.FC<OptionsProperties> = ({ options }) => {
   return <Icon iconType="fas fa-exclamation-triangle" options={options} />;
 };
 

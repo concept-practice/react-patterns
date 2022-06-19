@@ -1,7 +1,7 @@
-import type ProjectionOptionsProps from "../../common/ProjectionOptionsProps";
+import type ProjectionOptionsProperties from "../../common/ProjectionOptionsProperties";
 import ValueDefaults from "../../../../utilities/defaults/ValueDefaults";
 
-const InputControl: React.FC<ProjectionOptionsProps> = ({ options = ValueDefaults.String, children }) => {
+const InputControl: React.FC<ProjectionOptionsProperties> = ({ options = ValueDefaults.String, children }) => {
   return <div className={`control ${options}`}>{children}</div>;
 };
 

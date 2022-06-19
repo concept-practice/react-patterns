@@ -1,7 +1,7 @@
-import type OptionsProps from "../../common/OptionsProps";
+import type OptionsProperties from "../../common/OptionsProperties";
 import ValueDefaults from "../../../../utilities/defaults/ValueDefaults";
 
-const ClickableIcon: React.FC<ClickableIconProps> = ({
+const ClickableIcon: React.FC<ClickableIconProperties> = ({
   onClickHandler,
   onKeyDownHandler,
   options = ValueDefaults.String,
@@ -20,7 +20,7 @@ const ClickableIcon: React.FC<ClickableIconProps> = ({
   );
 };
 
-interface ClickableIconProps extends OptionsProps {
+interface ClickableIconProperties extends OptionsProperties {
   onClickHandler: () => void;
   onKeyDownHandler: () => void;
   iconType: string;

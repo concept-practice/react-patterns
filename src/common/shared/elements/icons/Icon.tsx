@@ -1,7 +1,7 @@
-import type OptionsProps from "../../common/OptionsProps";
+import type OptionsProperties from "../../common/OptionsProperties";
 import ValueDefaults from "../../../../utilities/defaults/ValueDefaults";
 
-const Icon: React.FC<IconProps> = ({ options = ValueDefaults.String, iconType }) => {
+const Icon: React.FC<IconProperties> = ({ options = ValueDefaults.String, iconType }) => {
   return (
     <span className={`icon ${options}`}>
       <i className={iconType} />
@@ -9,7 +9,7 @@ const Icon: React.FC<IconProps> = ({ options = ValueDefaults.String, iconType })
   );
 };
 
-interface IconProps extends OptionsProps {
+interface IconProperties extends OptionsProperties {
   iconType: string;
 }
 

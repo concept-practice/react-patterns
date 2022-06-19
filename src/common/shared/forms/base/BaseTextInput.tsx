@@ -1,14 +1,14 @@
 import { CheckIcon, ExclamationTriangleIcon, InputControl, InputField, Label } from "../..";
 import ComponentBooleanToggle from "../../../hocs/ComponentBooleanToggle";
 import type IUseInput from "../hooks/IUseInput";
-import type ProjectionProps from "../../common/ProjectionProps";
+import type ProjectionProperties from "../../common/ProjectionProperties";
 import type { ReactNode } from "react";
 import ValidationMessage from "./ValidationMessage";
 import ValueDefaults from "../../../../utilities/defaults/ValueDefaults";
 import useDirtyValidation from "../hooks/UseDirtyValidation";
 import { useId } from "react";
 
-const BaseTextInput: React.FC<BaseTextInputProps> = ({
+const BaseTextInput: React.FC<BaseTextInputProperties> = ({
   required = ValueDefaults.Boolean,
   children,
   useInput,
@@ -57,7 +57,7 @@ const BaseTextInput: React.FC<BaseTextInputProps> = ({
   );
 };
 
-interface BaseTextInputProps extends ProjectionProps {
+interface BaseTextInputProperties extends ProjectionProperties {
   labelText: string;
   useInput: IUseInput;
   children?: ReactNode;
