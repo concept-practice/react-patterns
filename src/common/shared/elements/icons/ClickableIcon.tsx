@@ -14,6 +14,7 @@ const ClickableIcon: React.FC<ClickableIconProperties> = ({
       onKeyDown={onKeyDownHandler}
       role="button"
       tabIndex={ValueDefaults.CanTabTo}
+      title="clickable icon"
     >
       <i className={iconType} />
     </span>
